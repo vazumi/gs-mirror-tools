@@ -1,0 +1,32 @@
+name: mirror-googlesource-deps
+
+on:
+  workflow_dispatch:
+    inputs:
+      total_shards:
+        description: "number of parallel shards"
+        default: "8"
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run mirror for shard
+        env:
+          MIRROR_PAT: ${{ secrets.MIRROR_PAT }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          git config --global user.email "mirror@actions.local"
+          git config --global user.name "mirror bot"
+          python3 scripts/mirror.py ${{ matrix.shard }} ${{ github.event.inputs.total_shards || '8' }} "$OWNER"
+      - name: Upload shard summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: summary-${{ matrix.shard }}
+          path: summary-*.json

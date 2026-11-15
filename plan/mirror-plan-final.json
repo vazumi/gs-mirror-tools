@@ -1,0 +1,919 @@
+{
+ "mirror": [
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/src.git",
+   "rev": "150.0.7871.212",
+   "kind": "tag",
+   "gh_name": "hf-gs-chromium-src"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/agents.git",
+   "rev": "915560017c2c2131bd38d24e893362cc8887b65b",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-agents"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/canvas_bench.git",
+   "rev": "a7b40ea5ae0239517d78845a5fc9b12976bfc732",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-canvas_bench"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/frame_rate/content.git",
+   "rev": "c10272c88463efeef6bb19c9ec07c42bc8fe22b9",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-frame_rate-content"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/website.git",
+   "rev": "fafd96a584426168eefe9b01a45ba2ecb6754c0f",
+   "kind": "sha",
+   "gh_name": "hf-gs-website"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/cdm.git",
+   "rev": "d6c4e1ea4c8fc3dcd98ac3ab5a981f63067223a4",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-cdm"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/v8/fuzzer_wasm_corpus.git",
+   "rev": "1df5e50a45db9518a56ebb42cb020a94a090258b",
+   "kind": "sha",
+   "gh_name": "hf-gs-v8-fuzzer_wasm_corpus"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/aosp/platform/frameworks/support/javascriptengine/javascriptengine/src.git",
+   "rev": "7539442db1dc790c64d0d9bade922329292d834b",
+   "kind": "sha",
+   "gh_name": "hf-gs-aosp-platform-frameworks-support-javascriptengine-javascriptengine-src"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/angle/angle.git",
+   "rev": "99a746a6e378fcb2e57d89cf47a0310800d7411a",
+   "kind": "sha",
+   "gh_name": "hf-gs-angle-angle"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/apache-portable-runtime.git",
+   "rev": "c3f11fcd86b42922834cae91103cf068246c6bb6",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-apache-portable-runtime"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/breakpad/breakpad.git",
+   "rev": "94c818ea27482d8a8d32b0c8de50cbca0270db9a",
+   "kind": "sha",
+   "gh_name": "hf-gs-breakpad-breakpad"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/cast_core/public",
+   "rev": "1629985cfc0b065310738512a000b6e68716aa03",
+   "kind": "sha",
+   "gh_name": "hf-gs-cast_core-public"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/catapult.git",
+   "rev": "0ee81160e4e1b49d26814768d7782554e95c56fa",
+   "kind": "sha",
+   "gh_name": "hf-gs-catapult"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromiumos/chromite.git",
+   "rev": "8ad749f4533e9f709aebb8f91e66c3f5f5a2d8a9",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromiumos-chromite"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/colorama.git",
+   "rev": "3de9f013df4b470069d03d250224062e8cf15c49",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-colorama"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/google3/cros_components.git",
+   "rev": "8d175bbffcaed7d388701535cc8c95457c179cff",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-google3-cros_components"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromiumos/platform2/system_api.git",
+   "rev": "dfe5a85e26a50177f023b4d3a46f6e4ecae3a2a2",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromiumos-platform2-system_api"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/crossbench.git",
+   "rev": "86a083134ee7077fbdfcf3f182622b1b5bcdc340",
+   "kind": "sha",
+   "gh_name": "hf-gs-crossbench"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/web-tests.git",
+   "rev": "ad2ed0343ad66ffa0155c06c86c4c79af262af86",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-web-tests"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
+   "rev": "ec77017fb3e090ff02bffb9c6980ebcdd3006ddc",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-tools-depot_tools"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/devtools/devtools-frontend",
+   "rev": "bdde3914de7553b4d9d411e4b39a5a031419ba8b",
+   "kind": "sha",
+   "gh_name": "hf-gs-devtools-devtools-frontend"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.com/libeigen/eigen.git",
+   "rev": "97ae35a459a6f0e811e9dd82aa11051794f64c1c",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.com-libeigen-eigen"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/third_party/ffmpeg.git",
+   "rev": "53a707254426e7e01f2873eb8175def1b9e681ab",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-third_party-ffmpeg"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/deps/flac.git",
+   "rev": "e7108e2ed031547c3759217819a032065c820d73",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-deps-flac"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/fontconfig.git",
+   "rev": "f7e719706f6850eaa9f03dabd59bfcac8f22d5d5",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-fontconfig"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/src/third_party/freetype2.git",
+   "rev": "a5877f48fff8dd6cf8d53c505ce055499376aee2",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-src-third_party-freetype2"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.gnome.org/GNOME/glib.git",
+   "rev": "e05063ccc6c8f222465a1080927f4c14349f3de6",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.gnome.org-GNOME-glib"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/deps/gperf.git",
+   "rev": "e9eeea862a18e77b945d98eff7e1bf065d3daf8e",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-deps-gperf"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.gnome.org/GNOME/gsettings-desktop-schemas.git",
+   "rev": "1db238b6a349ea7fae6f1c0713afe04d1bb7ea5c",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.gnome.org-GNOME-gsettings-desktop-schemas"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.gnome.org/GNOME/gvdb.git",
+   "rev": "c6f2359cc1d00f16e0a0e2527fa0bc1882b8b5ab",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.gnome.org-GNOME-gvdb"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/deps/hunspell_dictionaries.git",
+   "rev": "00f6e69c905b30fdf701cdcef6a517582d7e0028",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-deps-hunspell_dictionaries"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/deps/icu.git",
+   "rev": "d3c612f4414600bd06a68db89944df130b5bc248",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-deps-icu"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/third_party/instrumented_libraries.git",
+   "rev": "490c778c3a20405a7bfbe42bc426e5d18e5b3bab",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-third_party-instrumented_libraries"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/junit.git",
+   "rev": "890f3c972647de378f25e7271d8fbbd9d3456b79",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-junit"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/leveldb.git",
+   "rev": "29465588d3dfdc80fba5e198037582b8fdb5dd60",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-leveldb"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/libaddressinput.git",
+   "rev": "81eb9628382b07d371d8ea0b11badf7de3857fd5",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-libaddressinput"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.freedesktop.org/emersion/libdisplay-info.git",
+   "rev": "c67a3e9bedb05ab61c7443704a1a107e76254595",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.freedesktop.org-emersion-libdisplay-info"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromiumos/third_party/libdrm.git",
+   "rev": "e984d448b8b17aab853369e6c203e53719f46de1",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromiumos-third_party-libdrm"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.freedesktop.org/libinput/libei.git",
+   "rev": "a9bf31da06f06bfce73702191c3db93aae289459",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.freedesktop.org-libinput-libei"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/codecs/libgav1.git",
+   "rev": "4ad433700e5d7c45df3d6146b7c92c8945c19e64",
+   "kind": "sha",
+   "gh_name": "hf-gs-codecs-libgav1"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.gnome.org/GNOME/libgudev.git",
+   "rev": "df7c9c9940160307aaeb31347f4776a46f8736a9",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.gnome.org-GNOME-libgudev"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.freedesktop.org/libinput/libinput.git",
+   "rev": "5cf833b572f5a33663888da321dce0ba1abd82a2",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.freedesktop.org-libinput-libinput"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromiumos/platform2/libipp.git",
+   "rev": "4be5f77f672a3a9f1bbf3c935fb0ea8b3f86ce61",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromiumos-platform2-libipp"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/deps/libjpeg_turbo.git",
+   "rev": "640f254ad0fa03f6b1f29f89b7dd9366f2f6e533",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-deps-libjpeg_turbo"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/liblouis-github.git",
+   "rev": "9700847afb92cb35969bdfcbbfbbb74b9c7b3376",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-liblouis-github"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/git.code.sf.net/p/perfmon2/libpfm4.git",
+   "rev": "186a658c3e1e49b0ee3da414a7db8ba971a00cb5",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-git.code.sf.net-p-perfmon2-libpfm4"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/libphonenumber.git",
+   "rev": "981600cc587fb87483ad294a61daa187afc64b2c",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-libphonenumber"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/deps/libsrtp.git",
+   "rev": "cd5d177bf1fde755ddb4c7f0d9ff7693f8b49e5e",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-deps-libsrtp"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromiumos/platform/libva-fake-driver.git",
+   "rev": "04f902b9ba9f8083b19d22e7b55591bbcaae31c0",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromiumos-platform-libva-fake-driver"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/webm/libvpx.git",
+   "rev": "d3335af9e8ec27395f66206be08e786e3de05e60",
+   "kind": "sha",
+   "gh_name": "hf-gs-webm-libvpx"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/webm/libwebm.git",
+   "rev": "4bb96e97f390299a22902ee4e2b754c6a4b31572",
+   "kind": "sha",
+   "gh_name": "hf-gs-webm-libwebm"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/webm/libwebp.git",
+   "rev": "68dd1c3040d500f56fe7ffb754b1813fb64b5887",
+   "kind": "sha",
+   "gh_name": "hf-gs-webm-libwebp"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/libyuv/libyuv.git",
+   "rev": "1e2e3a35993609da1d89ac170b907719d555f4b3",
+   "kind": "sha",
+   "gh_name": "hf-gs-libyuv-libyuv"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/linux-syscall-support.git",
+   "rev": "29164a80da4d41134950d76d55199ea33fbb9613",
+   "kind": "sha",
+   "gh_name": "hf-gs-linux-syscall-support"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromiumos/platform/minigbm.git",
+   "rev": "250c655ac972a4057ccacda6653893f22e15c78e",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromiumos-platform-minigbm"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.gnome.org/GNOME/mutter.git",
+   "rev": "b48811767189fb5446bd1b831e98271a21866e09",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.gnome.org-GNOME-mutter"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/deps/nasm.git",
+   "rev": "525a09a813be0f75b646ee93fc2a31c27b87d722",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-deps-nasm"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/netty-tcnative.git",
+   "rev": "b21c6eee658866b83122c674e3c0da054e09a3d7",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-netty-tcnative"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/netty4.git",
+   "rev": "cc4420b13bb4eeea5b1cf4f93b2755644cd3b120",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-netty4"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/third_party/openh264rs.git",
+   "rev": "17bcbb11cfd6e6065c56b4c5b62fc442275b31b0",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-third_party-openh264rs"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/openscreen",
+   "rev": "b6aebbccfb416428ef318cb0ddc1ca23741306ac",
+   "kind": "sha",
+   "gh_name": "hf-gs-openscreen"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/deps/perl.git",
+   "rev": "a2bd4470d3485e6eda532eee416a71d16db2d7ba",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-deps-perl"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/gitlab.freedesktop.org/pipewire/pipewire.git",
+   "rev": "b741e0c74f5436f0c925f7741140db0efd32cf4e",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-gitlab.freedesktop.org-pipewire-pipewire"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromiumos/third_party/pyelftools.git",
+   "rev": "2909369467745064ab218de04fb3d7199ed44e4c",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromiumos-third_party-pyelftools"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/search_engines_data.git",
+   "rev": "54e52a25f58421c226805a39507a42e2ff364b28",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-search_engines_data"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/smhasher.git",
+   "rev": "07bb4de10a63e8cc2e1724865454eba635742383",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-smhasher"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/chromium/deps/sqlite.git",
+   "rev": "c1172ac3c91edb02a86ea9ce479ef5b5fe5c6f34",
+   "kind": "sha",
+   "gh_name": "hf-gs-chromium-deps-sqlite"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/anongit.freedesktop.org/git/wayland/wayland-protocols.git",
+   "rev": "ee78491a237eaff9389a0ccf8680521d074407d3",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-anongit.freedesktop.org-git-wayland-wayland-protocols"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/anongit.freedesktop.org/git/wayland/wayland.git",
+   "rev": "87cc8a8728a923fc57938faa81ba0e74f34ecdc7",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-anongit.freedesktop.org-git-wayland-wayland"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/khronosgroup/webgl.git",
+   "rev": "714857a28445e8f5d8d6ae1c78498578009534d8",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-khronosgroup-webgl"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/webpagereplay.git",
+   "rev": "c97b499f01fe51a4f702f8bf09abdab4a020cf5f",
+   "kind": "sha",
+   "gh_name": "hf-gs-webpagereplay"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/anongit.freedesktop.org/git/wayland/weston.git",
+   "rev": "b65be9e699847c975440108a42f05412cc7fddac",
+   "kind": "sha",
+   "gh_name": "hf-gs-external-anongit.freedesktop.org-git-wayland-weston"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/v8/v8.git",
+   "rev": "b64cdb2a34d27e0254f5b8841cece2e64ea55dae",
+   "kind": "sha",
+   "gh_name": "hf-gs-v8-v8"
+  }
+ ],
+ "rewrite": [
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/toji/webvr.info.git",
+   "gh_url": "https://github.com/toji/webvr.info.git",
+   "rev": "c58ae99b9ff9e2aa4c524633519570bf33536248"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/EarlGrey.git",
+   "gh_url": "https://github.com/google/EarlGrey.git",
+   "rev": "5bbfca9a73b99945ce2dac0cd8ce2a1e610cf5aa"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/eDistantObject.git",
+   "gh_url": "https://github.com/google/eDistantObject.git",
+   "rev": "cbc0842a4bec0d64582ddffc14b353658127cd4e"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/GTXiLib.git",
+   "gh_url": "https://github.com/google/GTXiLib.git",
+   "rev": "0e6d6628c5b4d733dfc8f605ab576dcbb72aeeb9"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/airbnb/lottie-ios.git",
+   "gh_url": "https://github.com/airbnb/lottie-ios.git",
+   "rev": "4a4367659c0b8576d4a106669ff2ba129026085f"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/WebKit/webkit.git",
+   "gh_url": "https://github.com/WebKit/webkit.git",
+   "rev": "f8c0fe750d94b7db23d193c0b1f31858c2537620"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/ink.git",
+   "gh_url": "https://github.com/google/ink.git",
+   "rev": "4413fe7bd41f09f37d7c8fe87df59b6e0f54300a"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/anonymous-tokens.git",
+   "gh_url": "https://github.com/google/anonymous-tokens.git",
+   "rev": "1ae8df5e40bab28959cc182c2c0d88923059e278"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google-ar/arcore-android-sdk.git",
+   "gh_url": "https://github.com/google-ar/arcore-android-sdk.git",
+   "rev": "80036a515b38deca1ad080b7c436856b454358f5"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/googlevr/cardboard/",
+   "gh_url": "https://github.com/googlevr/cardboard/.git",
+   "rev": "8bd424da7f1e399255a1b6e7c02be8e281ecc974"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/compact_enc_det.git",
+   "gh_url": "https://github.com/google/compact_enc_det.git",
+   "rev": "d127078cedef9c6642cbe592dacdd2292b50bb19"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/zorkow/speech-rule-engine.git",
+   "gh_url": "https://github.com/zorkow/speech-rule-engine.git",
+   "rev": "370dc7c7c6692e03b14585d7521cb2bb70727f7e"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/clang/tools/clang-format.git",
+   "gh_url": "https://github.com/llvm/llvm-project/clang/tools/clang-format.git",
+   "rev": "0ca48e889615842946cdcc09c4e7ee976dc36444"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/cld_3.git",
+   "gh_url": "https://github.com/google/cld_3.git",
+   "rev": "b48dc46512566f5a2d41118c8c1116c4f96dc661"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/compiler-rt.git",
+   "gh_url": "https://github.com/llvm/llvm-project/compiler-rt.git",
+   "rev": "1de801eb15788ba70f4d82c0ac049b920bbbc418"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/chromium/content_analysis_sdk.git",
+   "gh_url": "https://github.com/chromium/content_analysis_sdk.git",
+   "rev": "0a0e7ea516249e786d5a8884552bbd6e163d89cb"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/cpu_features.git",
+   "gh_url": "https://github.com/google/cpu_features.git",
+   "rev": "81d13c49649f0714dd41fb56bb246398b6584085"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/pytorch/cpuinfo.git",
+   "gh_url": "https://github.com/pytorch/cpuinfo.git",
+   "rev": "3ce3d87adef69f04e196e25b7f754028d12750c4"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/webmproject/CrabbyAvif.git",
+   "gh_url": "https://github.com/webmproject/CrabbyAvif.git",
+   "rev": "d0af3dc517247541c4d9b3e4fffc8bcde1aba196"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/crc32c.git",
+   "gh_url": "https://github.com/google/crc32c.git",
+   "rev": "2bbb3be42e20a0e6c0f7b39dc07dc863d9ffbc07"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/videolan/dav1d.git",
+   "gh_url": "https://github.com/videolan/dav1d.git",
+   "rev": "4e3ab21fbbf84a4bd283ea27f96287fcd7c228c1"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/aengelke/disarm.git",
+   "gh_url": "https://github.com/aengelke/disarm.git",
+   "rev": "8770f6d6f0c62e7e008f4bf0e04d22197ecb98e3"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/googleprojectzero/domato.git",
+   "gh_url": "https://github.com/googleprojectzero/domato.git",
+   "rev": "fadff396cc45d521cc594d3e2396e27e887b1963"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/jk-jeon/dragonbox.git",
+   "gh_url": "https://github.com/jk-jeon/dragonbox.git",
+   "rev": "beeeef91cf6fef89a4d4ba5e95d47ca64ccb3a44"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/dmgbuild/ds_store.git",
+   "gh_url": "https://github.com/dmgbuild/ds_store.git",
+   "rev": "2d2733d8b5415ffdddc3d459836ee9c853f664c2"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/googlefonts/emoji-metadata",
+   "gh_url": "https://github.com/googlefonts/emoji-metadata.git",
+   "rev": "173b9b26e8fcbcbe64e1ecbf073a21a96b95c6b1"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/emoji-segmenter.git",
+   "gh_url": "https://github.com/google/emoji-segmenter.git",
+   "rev": "955936be8b391e00835257059607d7c5b72ce744"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/libexpat/libexpat.git",
+   "gh_url": "https://github.com/libexpat/libexpat.git",
+   "rev": "a851869e111c06fbcdc89edf639abf5fc2b6deba"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/aengelke/fadec.git",
+   "gh_url": "https://github.com/aengelke/fadec.git",
+   "rev": "c9f78f532b9004de278489019ab2c6c28ae9746e"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/farmhash.git",
+   "gh_url": "https://github.com/google/farmhash.git",
+   "rev": "9d99331eb762e9ee22fd97d15a594525ad98310a"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/fastfloat/fast_float.git",
+   "gh_url": "https://github.com/fastfloat/fast_float.git",
+   "rev": "dbeabeeb3e6791cb96994c2a7a084c36e62ccfb2"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google-parfait/federated-compute.git",
+   "gh_url": "https://github.com/google-parfait/federated-compute.git",
+   "rev": "b72c315ebd3227c0c1e0581c8d6c4e95bdcfc66b"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/flatbuffers.git",
+   "gh_url": "https://github.com/google/flatbuffers.git",
+   "rev": "a86afae9399bbe631d1ea0783f8816e780e236cc"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/Maratyszcza/FP16.git",
+   "gh_url": "https://github.com/Maratyszcza/FP16.git",
+   "rev": "782eea126dc5c755827be751a099eb01826175cf"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/fuzztest.git",
+   "gh_url": "https://github.com/google/fuzztest.git",
+   "rev": "fcde2c27b6187b44eecdb4eefe3a02a23401daed"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/Maratyszcza/FXdiv.git",
+   "gh_url": "https://github.com/Maratyszcza/FXdiv.git",
+   "rev": "63058eff77e11aa15bf531df5dd34395ec3017c8"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/gemmlowp.git",
+   "gh_url": "https://github.com/google/gemmlowp.git",
+   "rev": "16e8662c34917be0065110bfcd9cc27d30f52fdf"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/truth.git",
+   "gh_url": "https://github.com/google/truth.git",
+   "rev": "8931d65997b243689888da8daf7561bedf63d848"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/benchmark.git",
+   "gh_url": "https://github.com/google/benchmark.git",
+   "rev": "a6b4a9f00b36c19af9997d68a1cf6e0b5b3d032c"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/googletest.git",
+   "gh_url": "https://github.com/google/googletest.git",
+   "rev": "e882c36410197464e3429546e6a7d5e217bde51e"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/harfbuzz/harfbuzz.git",
+   "gh_url": "https://github.com/harfbuzz/harfbuzz.git",
+   "rev": "9baef4fc09866ad3ec65ccead2091bc9787c6a1d"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/highway.git",
+   "gh_url": "https://github.com/google/highway.git",
+   "rev": "2607d3b5b0113992fe84d3848859eae13b3b52c1"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/ink.git",
+   "gh_url": "https://github.com/google/ink.git",
+   "rev": "bbbdbe3be2cf7717e88c6384689bfd698c3a9b46"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/c2nes/javalang.git",
+   "gh_url": "https://github.com/c2nes/javalang.git",
+   "rev": "566963547575e93d305871d9cb26ce47ff1a036e"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/WebKit/JetStream.git",
+   "gh_url": "https://github.com/WebKit/JetStream.git",
+   "rev": "5fb9b4915f47792e6368d54d79ba3ba85e5600cc"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/WebKit/JetStream.git",
+   "gh_url": "https://github.com/WebKit/JetStream.git",
+   "rev": "2145cedef4ca2777b792cb0059d3400ee2a6153c"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/WebKit/JetStream.git",
+   "gh_url": "https://github.com/WebKit/JetStream.git",
+   "rev": "06785cf861ac44855f168cbbe829278c2802e6de"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/open-source-parsers/jsoncpp.git",
+   "gh_url": "https://github.com/open-source-parsers/jsoncpp.git",
+   "rev": "93acc7b155048f1a66c43235cc205519f1e7a6ea"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/compiler-rt/lib/fuzzer.git",
+   "gh_url": "https://github.com/llvm/llvm-project/compiler-rt/lib/fuzzer.git",
+   "rev": "c7ea90fb61105752fa78e257e77a7c5d62fff7d3"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxx.git",
+   "gh_url": "https://github.com/llvm/llvm-project/libcxx.git",
+   "rev": "64f64c14ae2f4653af875bd172462a4c5e6afe18"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxxabi.git",
+   "gh_url": "https://github.com/llvm/llvm-project/libcxxabi.git",
+   "rev": "8e42446dd61148a66220123297964bd3856e7cf9"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/libprotobuf-mutator.git",
+   "gh_url": "https://github.com/google/libprotobuf-mutator.git",
+   "rev": "a0448e5055e4740774e00d496f016d9fcd572200"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libunwind.git",
+   "gh_url": "https://github.com/llvm/llvm-project/libunwind.git",
+   "rev": "9e44ea2ff4f53a60c2a3d2b6f511d7bab9ab12f0"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google-ai-edge/LiteRT.git",
+   "gh_url": "https://github.com/google-ai-edge/LiteRT.git",
+   "rev": "38461529489d6cfb20b152694f05c41d9a566d3e"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libc.git",
+   "gh_url": "https://github.com/llvm/llvm-project/libc.git",
+   "rev": "9818db3835156dd5aa1091a61efe7144dec5dbad"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/dmgbuild/mac_alias.git",
+   "gh_url": "https://github.com/dmgbuild/mac_alias.git",
+   "rev": "272dc95cc653a2b09b2711d3029cbf61dd69ea74"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/material-foundation/material-color-utilities.git",
+   "gh_url": "https://github.com/material-foundation/material-color-utilities.git",
+   "rev": "194144d75ed7d34f06264a625e086db81a7ab9aa"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/microsoft/DirectX-Headers.git",
+   "gh_url": "https://github.com/microsoft/DirectX-Headers.git",
+   "rev": "07b94cba474be6cdfd934febdbd0b21ca0524187"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/microsoft/multimedia-redirection.git",
+   "gh_url": "https://github.com/microsoft/multimedia-redirection.git",
+   "rev": "8b1d8893d126547309f1bab8d8232418aa7c7109"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/microsoft/webauthn.git",
+   "gh_url": "https://github.com/microsoft/webauthn.git",
+   "rev": "ef82c157125a0490e05f6ea82a7adb1b8e1bad08"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google-ai-edge/ml-drift.git",
+   "gh_url": "https://github.com/google-ai-edge/ml-drift.git",
+   "rev": "7483ad8a5181b220a19bcc20ec02dbe9c040c100"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/nearby-connections.git",
+   "gh_url": "https://github.com/google/nearby-connections.git",
+   "rev": "0bad8b0c9877f92eeeb550654f1ea51a71a085e4"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/intel/ARM_NEON_2_x86_SSE.git",
+   "gh_url": "https://github.com/intel/ARM_NEON_2_x86_SSE.git",
+   "rev": "78784fefa872994ea9acbb7371d3003884815116"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/nlohmann/json.git",
+   "gh_url": "https://github.com/nlohmann/json.git",
+   "rev": "55f93686c01528224f448c19128836e7df245f72"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/project-oak/oak.git",
+   "gh_url": "https://github.com/project-oak/oak.git",
+   "rev": "5e3b64f6ac085e32e9c06b4ca2085a0f5dfa9896"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/cisco/openh264",
+   "gh_url": "https://github.com/cisco/openh264.git",
+   "rev": "1bca62311e447fd9c39fc93de2c4b96cd5ce971c"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/OpenXR-SDK",
+   "gh_url": "https://github.com/KhronosGroup/OpenXR-SDK.git",
+   "rev": "75c53b6e853dc12c7b3c771edc9c9c841b15faaa"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/khaledhosny/ots.git",
+   "gh_url": "https://github.com/khaledhosny/ots.git",
+   "rev": "46bea9879127d0ff1c6601b078e2ce98e83fcd33"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/perfetto.git",
+   "gh_url": "https://github.com/google/perfetto.git",
+   "rev": "6fffac7ff1049fe42dd61c5b25141c237af22b38"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/protocolbuffers/protobuf-javascript",
+   "gh_url": "https://github.com/protocolbuffers/protobuf-javascript.git",
+   "rev": "eb59fef711c3d090d54b988b99b7c067d6b7e3a8"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/pthreadpool.git",
+   "gh_url": "https://github.com/google/pthreadpool.git",
+   "rev": "15a6644ba1c45f1acc16ac1e883efc3e56c6bed2"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/GoogleChromeLabs/pywebsocket3.git",
+   "gh_url": "https://github.com/GoogleChromeLabs/pywebsocket3.git",
+   "rev": "139224e0d71db84fe1922601cb92ec8c8f3885ba"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/quic-trace.git",
+   "gh_url": "https://github.com/google/quic-trace.git",
+   "rev": "6ecf6aa8e604655f1dfa72c4a1ae733c4c7fc883"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/re2.git",
+   "gh_url": "https://github.com/google/re2.git",
+   "rev": "2da0056814cf180480a19f5cf811e7e1c054bf6d"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/mozilla/readability.git",
+   "gh_url": "https://github.com/mozilla/readability.git",
+   "rev": "d7949dc47dd9ed9ee1d3b34ffdcf3bce28cde435"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/kennethreitz/requests.git",
+   "gh_url": "https://github.com/kennethreitz/requests.git",
+   "rev": "c2b307dbefe21177af03f9feb37181a89a799fcc"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/ruy.git",
+   "gh_url": "https://github.com/google/ruy.git",
+   "rev": "37e43f2054e1a9372994498d7fb4783ac48a5717"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/dcleblanc/safeint.git",
+   "gh_url": "https://github.com/dcleblanc/safeint.git",
+   "rev": "72f0745e26091af6d1186fd91426377f16688ba7"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/securemessage.git",
+   "gh_url": "https://github.com/google/securemessage.git",
+   "rev": "69a02984d4563c6c21132ee882d1d3df1981f5a1"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/cisco/sframe",
+   "gh_url": "https://github.com/cisco/sframe.git",
+   "rev": "6a37f061f4eda0c6594c91ecf99b5ff498c8c124"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/snappy.git",
+   "gh_url": "https://github.com/google/snappy.git",
+   "rev": "9c28114a38866f6deeaa826db918293bc28ae410"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/WebKit/Speedometer.git",
+   "gh_url": "https://github.com/WebKit/Speedometer.git",
+   "rev": "f866d2b077038bc85bea5edb7bff8e05cadef0b2"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/WebKit/Speedometer.git",
+   "gh_url": "https://github.com/WebKit/Speedometer.git",
+   "rev": "732af0dfe867f8815e662ac637357e55f285dbbb"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/WebKit/Speedometer.git",
+   "gh_url": "https://github.com/WebKit/Speedometer.git",
+   "rev": "8bf7946e39e47c875c00767177197aea5727e84a"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/WebKit/Speedometer.git",
+   "gh_url": "https://github.com/WebKit/Speedometer.git",
+   "rev": "8d67f28d0281ac4330f283495b7f48286654ad7d"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/WebKit/Speedometer.git",
+   "gh_url": "https://github.com/WebKit/Speedometer.git",
+   "rev": "1386415be8fef2f6b6bbdbe1828872471c5d802a"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/GoogleChromeLabs/text-fragments-polyfill.git",
+   "gh_url": "https://github.com/GoogleChromeLabs/text-fragments-polyfill.git",
+   "rev": "abc6ed408b3f20e91d9cbda9977748459f5e3877"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/tensorflow/tensorflow.git",
+   "gh_url": "https://github.com/tensorflow/tensorflow.git",
+   "rev": "961c96e7a721bed97b432b220c91ee567532dd58"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/ukey2.git",
+   "gh_url": "https://github.com/google/ukey2.git",
+   "rev": "0275885d8e6038c39b8a8ca55e75d1d4d1727f47"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git",
+   "gh_url": "https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git",
+   "rev": "82a9d47e4f9d91f0e32d2b6acd9714fcee1933a0"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/KDE/plasma-wayland-protocols.git",
+   "gh_url": "https://github.com/KDE/plasma-wayland-protocols.git",
+   "rev": "c5ac4db818f4a575a6ccfe0065b73ecfaba6e93e"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/SeleniumHQ/selenium/py.git",
+   "gh_url": "https://github.com/SeleniumHQ/selenium/py.git",
+   "rev": "07c3d0845c26f6ebb13e7dbd15f80519f1f383d7"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/gpuweb/cts.git",
+   "gh_url": "https://github.com/gpuweb/cts.git",
+   "rev": "e18f9fbfea25ff9419b5fa8355c68a61592c915c"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/google/XNNPACK.git",
+   "gh_url": "https://github.com/google/XNNPACK.git",
+   "rev": "82be86388c131862c3673c177d9dbcd5d3e3844d"
+  },
+  {
+   "gs_url": "https://chromium.googlesource.com/external/github.com/facebook/zstd.git",
+   "gh_url": "https://github.com/facebook/zstd.git",
+   "rev": "10da6ba6de05e29169261fa4b68eb99239f770dd"
+  }
+ ]
+}

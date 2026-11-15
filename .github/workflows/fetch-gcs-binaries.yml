@@ -1,0 +1,114 @@
+name: fetch-gcs-binaries
+
+on:
+  workflow_dispatch:
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull chromium 150 DEPS from mirror tree
+        run: |
+          git clone --depth 1 -b mirror https://github.com/vazumi/hf-gs-chromium-src.git src-tree
+          ls src-tree/DEPS
+
+      - name: Collect linux gcs deps + gn via cipd
+        env:
+          GH_TOKEN: ${{ secrets.MIRROR_PAT }}
+        run: |
+          mkdir -p bundle/gcs bundle/cipd
+          python3 - <<'PYEOF'
+          import json, re, subprocess, os
+          src = open("src-tree/DEPS", encoding="utf-8").read()
+          g = {"Var": lambda n: "%(" + n + ")s", "Str": lambda s: str(s), "Url": lambda *a: list(a), "Float": float}
+          exec(src, g)
+          vars_d = g.get("vars", {})
+          def resolve(s):
+              s = str(s)
+              for k, v in vars_d.items():
+                  if isinstance(v, str):
+                      s = s.replace("%(" + k + ")s", v)
+              return s
+          out = []
+          for path_key, val in (g.get("deps", {}) or {}).items():
+              if not isinstance(val, dict) or val.get("dep_type") != "gcs":
+                  continue
+              cond = str(val.get("condition", ""))
+              if "checkout_android" in cond or "checkout_chromeos" in cond:
+                  continue
+              bucket = resolve(val["bucket"])
+              for obj in val.get("objects", []):
+                  oc = str(obj.get("condition", ""))
+                  if "checkout_android" in oc or "checkout_chromeos" in oc or "host_os" in oc and "linux" not in oc:
+                      continue
+                  if "checkout_linux" not in oc and "host_os" in oc:
+                      continue
+                  out.append({
+                      "path": path_key,
+                      "bucket": bucket,
+                      "object": resolve(obj["object_name"]),
+                      "sha256": obj.get("sha256sum", ""),
+                      "condition": oc,
+                  })
+          json.dump(out, open("bundle/gcs/gcs-list.json", "w"), indent=1)
+          print("gcs objects:", len(out))
+          cipd = []
+          for path_key, val in (g.get("deps", {}) or {}).items():
+              if isinstance(val, dict) and val.get("dep_type") == "cipd":
+                  cond = str(val.get("condition", ""))
+                  if "checkout_android" in cond or "checkout_chromeos" in cond or '"win"' in cond or '"mac"' in cond:
+                      continue
+                  for pkg in val.get("packages", []):
+                      cipd.append({"path": path_key, "package": resolve(pkg["package"]), "version": resolve(pkg["version"])})
+          json.dump(cipd, open("bundle/cipd/cipd-list.json", "w"), indent=1)
+          print("cipd packages:", len(cipd))
+          PYEOF
+
+      - name: Download gcs objects
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, hashlib, subprocess
+          objs = json.load(open("bundle/gcs/gcs-list.json"))
+          manifest = []
+          for o in objs:
+              url = f"https://storage.googleapis.com/{o['bucket']}/{o['object']}"
+              dest = os.path.join("bundle/gcs", o["bucket"], o["object"])
+              os.makedirs(os.path.dirname(dest), exist_ok=True)
+              r = subprocess.run(["curl", "-sSf", "--retry", "3", "-o", dest, url])
+              if r.returncode != 0:
+                  print("MISS", url); continue
+              h = hashlib.sha256(open(dest, "rb").read()).hexdigest()
+              manifest.append({**o, "url": url, "local_sha": h, "sha_ok": (not o["sha256"]) or h == o["sha256"]})
+              print("OK" if manifest[-1]["sha_ok"] else "SHA-MISMATCH", o["bucket"], o["object"])
+          json.dump(manifest, open("bundle/gcs/manifest.json", "w"), indent=1)
+          PYEOF
+
+      - name: Fetch cipd packages (gn etc.)
+        run: |
+          CIPD=https://chrome-infra-packages.appspot.com
+          curl -sSf -o cipd.bin "$CIPD/client?platform=linux-amd64" && chmod +x cipd.bin
+          python3 - <<'PYEOF'
+          import json, os, subprocess
+          pkgs = json.load(open("bundle/cipd/cipd-list.json"))
+          for p in pkgs:
+              dest = os.path.join("bundle/cipd", p["package"])
+              os.makedirs(dest, exist_ok=True)
+              r = subprocess.run(["./cipd.bin", "ensure", "-root", dest, "-ensure-file", "/dev/stdin",
+                                  "-server-url", "https://chrome-infra-packages.appspot.com"],
+                                 input=f"{p['package']} {p['version']}\n".encode(), capture_output=True)
+              print(p["package"], p["version"], "rc=", r.returncode, r.stderr.decode()[:200])
+          PYEOF
+
+      - name: Bundle and publish
+        env:
+          GH_TOKEN: ${{ secrets.MIRROR_PAT }}
+        run: |
+          tar -C bundle -czf chromium-150-binaries.tar.gz gcs cipd
+          sha256sum chromium-150-binaries.tar.gz > chromium-150-binaries.tar.gz.sha256
+          gh release delete binaries-150 --repo vazumi/gs-mirror-tools --yes 2>/dev/null || true
+          gh release create binaries-150 chromium-150-binaries.tar.gz chromium-150-binaries.tar.gz.sha256 \
+            --repo vazumi/gs-mirror-tools --title "chromium 150 gcs+cipd binaries" --notes "clang/gn/sysroot support packages"
+          echo published

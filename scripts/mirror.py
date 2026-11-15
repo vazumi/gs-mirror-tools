@@ -29,32 +29,49 @@ def main():
         name = item["gh_name"]; gs = item["gs_url"]; rev = item["rev"]; kind = item["kind"]
         gh_url = f"https://x-access-token:{token}@github.com/{owner}/{name}.git"
         try:
-            # 1. create repo (skip if exists)
-            r = subprocess.run(["gh", "api", "-X", "POST", f"/user/repos",
-                                "-f", f"name={name}", "-F", "private=false", "-f", "has_issues=false",
-                                "-f", "has_projects=false", "-f", "has_wiki=false",
-                                "-f", "description=googlesource mirror: " + gs],
-                               capture_output=True, text=True,
-                               env={**os.environ, "GH_TOKEN": token})
-            if r.returncode != 0 and "already_exists" not in r.stderr:
-                # 403 rate limit or other; log and continue to fetch anyway
-                print(f"[{name}] create: {r.stderr[:300]}", flush=True)
+            # 1. create repo (retry on secondary rate limit)
+            for attempt in range(5):
+                r = subprocess.run(["gh", "api", "-X", "POST", f"/user/repos",
+                                    "-f", f"name={name}", "-F", "private=false", "-f", "has_issues=false",
+                                    "-f", "has_projects=false", "-f", "has_wiki=false",
+                                    "-f", "description=googlesource mirror: " + gs],
+                                   capture_output=True, text=True,
+                                   env={**os.environ, "GH_TOKEN": token})
+                if r.returncode == 0 or "already_exists" in r.stderr:
+                    break
+                if "rate limit" in r.stderr.lower() or r.returncode == 403:
+                    print(f"[{name}] create rate-limited, wait 30s (attempt {attempt})", flush=True)
+                    time.sleep(30)
+                else:
+                    print(f"[{name}] create: {r.stderr[:200]}", flush=True)
+                    break
             # 2. shallow fetch from googlesource
             import shutil, tempfile
             with tempfile.TemporaryDirectory() as td:
                 sh(["git", "init", "-q", "-b", "mirror"], cwd=td)
                 sh(["git", "remote", "add", "origin", gs], cwd=td)
                 ref = f"refs/tags/{rev}" if kind == "tag" else rev
-                sh(["git", "fetch", "--depth", "1", "--quiet", "origin", ref], cwd=td, retry=2)
+                sh(["git", "fetch", "--depth", "1", "--quiet", "origin", ref], cwd=td, retry=3)
                 head = sh(["git", "rev-parse", "FETCH_HEAD"], cwd=td).strip()
-                # 3. push to GitHub
-                sh(["git", "push", "--force", "--quiet", gh_url, f"{head}:refs/heads/mirror"], cwd=td, retry=2)
+                # 3. push to GitHub (long retry for rate limiting)
+                last_err = None
+                for attempt in range(5):
+                    r = subprocess.run(["git", "push", "--force", "--quiet", gh_url,
+                                        f"{head}:refs/heads/mirror"], cwd=td, capture_output=True, text=True)
+                    if r.returncode == 0:
+                        last_err = None
+                        break
+                    last_err = (r.stderr or r.stdout)[-400:]
+                    print(f"[{name}] push retry {attempt}: {last_err[-200:]}", flush=True)
+                    time.sleep(20 * (attempt + 1))
+                if last_err:
+                    raise RuntimeError(f"push failed: {last_err}")
             ok.append(name)
             print(f"[OK] {name} <- {gs}@{rev[:12]} ({head[:12]})", flush=True)
         except Exception as e:
             failed.append({"name": name, "err": str(e)[-500:]})
             print(f"[FAIL] {name}: {str(e)[-300:]}", flush=True)
-        time.sleep(1)
+        time.sleep(5)
     summary = {"shard": shard, "ok": len(ok), "failed": failed}
     with open(f"summary-{shard}.json", "w") as f:
         json.dump(summary, f, indent=1)

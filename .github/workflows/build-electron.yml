@@ -1,0 +1,74 @@
+name: build-electron-43.3.0
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest-16-cores
+    timeout-minutes: 355
+    env:
+      HF_ELECTRON_ROOT: /home/runner/electron-renderkit
+    steps:
+      - name: Checkout tooling
+        uses: actions/checkout@v4
+
+      - name: Disk report
+        run: df -h / && nproc && free -g
+
+      - name: Checkout RenderKit (private)
+        uses: actions/checkout@v4
+        with:
+          repository: vazumi/HyperFrames-RenderKit
+          token: ${{ secrets.MIRROR_PAT }}
+          path: renderkit
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install build-tools
+        run: npm install -g @electron/build-tools
+
+      - name: Init electron profile
+        run: |
+          e init electron43-renderkit --root="$HF_ELECTRON_ROOT" --import testing --out Vaapi --remote-build none
+          e use electron43-renderkit
+
+      - name: Sync source tree
+        run: e sync
+
+      - name: Freeze Electron revision
+        run: |
+          cd "$HF_ELECTRON_ROOT/src"
+          git -C electron fetch --tags
+          git -C electron checkout v43.3.0
+          e sync
+
+      - name: Install Chromium Linux deps
+        run: |
+          cd "$HF_ELECTRON_ROOT/src"
+          sudo ./build/install-build-deps.sh --no-arm --no-prompt
+
+      - name: Apply RenderKit patches
+        run: |
+          cd "$GITHUB_WORKSPACE/renderkit"
+          ./scripts/check-tree.sh "$HF_ELECTRON_ROOT/src"
+          ./scripts/apply-patches.sh "$HF_ELECTRON_ROOT/src"
+          ./scripts/check-tree.sh "$HF_ELECTRON_ROOT/src"
+
+      - name: Build electron_dist_zip
+        run: |
+          cd "$GITHUB_WORKSPACE/renderkit"
+          ./scripts/build.sh "$HF_ELECTRON_ROOT/src" 12
+
+      - name: Publish dist.zip
+        env:
+          GH_TOKEN: ${{ secrets.MIRROR_PAT }}
+        run: |
+          cd "$HF_ELECTRON_ROOT/src/out/Vaapi"
+          sha256sum dist.zip > dist.zip.sha256
+          gh release create electron-43.3.0-renderkit dist.zip dist.zip.sha256 \
+            --repo vazumi/gs-mirror-tools \
+            --title "Electron 43.3.0 RenderKit build" \
+            --notes "Pinned Chromium 150.0.7871.212 + RenderKit patch route, built on 16-core runner."
